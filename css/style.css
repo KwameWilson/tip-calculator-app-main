@@ -1,2 +1,83 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap');
 
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #c5e4e7;
+    font-family: Space Mono;
+    font-weight: 700;
+}
+
+.container {
+    width: 920px;
+    margin: 0 auto;
+}
+
+
+.container>span.logo {
+    display: inline-block;
+    margin: 163px auto 87px;
+}
+
+.grid {
+    background: #fff;
+    border-radius: 25px;
+    padding: 32px 32px 32px 49px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 48px;
+}
+
+.grid-left>label {
+    font-size: 16px;
+    color: #5E7A7D;
+    margin-bottom: 6px;
+    display: inline-block;
+}
+
+.input-tab {
+    position: relative;
+}
+
+.input-tab input[type="text"] {
+    background: #F3F9FA;
+    border: 0;
+    border-radius: 5px;
+    padding: 6px 17px;
+    width: 379px;
+    text-align: right;
+    font-family: "Space Mono";
+    font-weight: 700;
+}
+
+.input-tab h5 {
+    color: #a9c3c4;
+    position: absolute;
+    top: 5px;
+    left: 16px;
+    font-size: 24px;
+}
+
+.input-tab input[placeholder="0"] {
+    font-size: 24px;
+    color: #a9c3c4;
+}
+
+.grid-left>h5:nth-child(3) {
+    margin: 40px 0 16px;
+
+}
+
+.tip-percentage {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+}
+
+.tip-percentage>h3:not(:last-child) {
+    background: #00474B;
+}
