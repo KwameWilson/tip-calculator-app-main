@@ -99,3 +99,32 @@ body {
     padding: 6px 14px;
     border-radius: 5px;
 }
+
+.grid-right {
+    background: #00474B;
+    color: #fff;
+    padding: 40px;
+    border-radius: 15px;
+    width: 413px;
+}
+
+.flex {
+    display: flex;
+    gap: 92px;
+    justify-content: center;
+    align-items: center;
+}
+
+.tip-amount h3 {
+    font-size: 16px;
+    text-wrap: nowrap;
+}
+
+.tip-amount span {
+    font-size: 13px;
+    color: #7F9D9F;
+}
+
+.tip-amount div:last-child {
+    color: #26C2AE;
+}
