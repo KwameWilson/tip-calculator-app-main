@@ -108,23 +108,35 @@ body {
     width: 413px;
 }
 
-.flex {
+.flex.tip-amount {
     display: flex;
     gap: 92px;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    margin-bottom: 25px;
 }
 
-.tip-amount h3 {
+.tip-amount h3,
+.total-person h3 {
     font-size: 16px;
     text-wrap: nowrap;
 }
 
-.tip-amount span {
+.tip-amount span,
+.total-person span {
     font-size: 13px;
     color: #7F9D9F;
 }
 
-.tip-amount div:last-child {
+.tip-amount div:last-child,
+.total-person div:last-child {
     color: #26C2AE;
+}
+
+.flex.total-person {
+    display: flex;
+    gap: 92px;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 122px;
 }
