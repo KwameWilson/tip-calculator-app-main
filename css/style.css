@@ -56,12 +56,20 @@ body {
     background: #F3F9FA;
     border: 0;
     border-radius: 5px;
+    font-size: 24px;
     padding: 6px 17px 6px 44px;
+    outline: 0;
     width: 379px;
     text-align: right;
     font-family: "Space Mono";
     font-weight: 700;
 }
+
+.input-tab input[type="text"]:focus,
+.people>input[type="text"]:focus {
+    border: 3px solid #9FE8DF;
+}
+
 
 .input-tab h5,
 .people span {
@@ -95,22 +103,41 @@ body {
     margin-bottom: 40px;
 }
 
-.tip-percentage>h3:not(:last-child) {
+.tip-percentage>h3 {
     background: #00474B;
     color: #fff;
     text-align: center;
     padding: 6px 14px;
     border-radius: 5px;
     cursor: pointer;
+    transition: .08s ease-in;
 }
 
-.tip-percentage>h3:last-child {
+.tip-percentage>h3:hover {
+    background: #9FE8DF;
+    color: #00474B;
+}
+
+.tip-percentage>input[placeholder="Custom"] {
     background: #F3F9FA;
     color: #547878;
-    text-align: center;
+    font-weight: 700;
+    font-size: 24px;
+    font-family: "Space Mono";
     padding: 6px 14px;
+}
+
+.tip-percentage>input[type="text"] {
     border-radius: 5px;
-    cursor: pointer;
+    font-size: 24px;
+    text-align: right;
+    border: 0;
+    outline: none;
+    width: 118px;
+}
+
+.tip-percentage>input[type="text"]:focus {
+    border: 3px solid #9FE8DF;
 }
 
 .grid-right {
@@ -164,4 +191,9 @@ button.btn {
     text-transform: uppercase;
     padding: 9px 144px;
     cursor: pointer;
+    transition: .08s ease-in;
+}
+
+button.btn:hover {
+    background: #9FE8DF;
 }
