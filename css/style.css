@@ -183,8 +183,9 @@ body {
 
 
 button.btn {
-    border: 0;
     background: #0D686D;
+    border: 0;
+    border-radius: 5px;
     color: #00474B;
     font-family: "Space Mono";
     font-size: 20px;
