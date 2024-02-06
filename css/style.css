@@ -51,8 +51,8 @@ body {
     position: relative;
 }
 
-.input-tab input[type="text"],
-.people>input[type="text"] {
+.input-tab input[type="number"],
+.people>input[type="number"] {
     background: #F3F9FA;
     border: 0;
     border-radius: 5px;
@@ -63,10 +63,12 @@ body {
     text-align: right;
     font-family: "Space Mono";
     font-weight: 700;
+    -webkit-appearance: none;
+    
 }
 
-.input-tab input[type="text"]:focus,
-.people>input[type="text"]:focus {
+.input-tab input[type="number"]:focus,
+.people>input[type="number"]:focus {
     border: 3px solid #9FE8DF;
 }
 
@@ -127,7 +129,7 @@ body {
     padding: 6px 14px;
 }
 
-.tip-percentage>input[type="text"] {
+.tip-percentage>input[type="number"] {
     border-radius: 5px;
     font-size: 24px;
     text-align: right;
@@ -136,7 +138,7 @@ body {
     width: 118px;
 }
 
-.tip-percentage>input[type="text"]:focus {
+.tip-percentage>input[type="number"]:focus {
     border: 3px solid #9FE8DF;
 }
 
