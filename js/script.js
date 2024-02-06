@@ -1,15 +1,17 @@
-const bill = document.querySelector('#bill');
-const tipPercentage = document.querySelectorAll('.tip-percentage>*');
+const bill = parseInt(document.querySelector('#bill'));
+const tipPercentage = document.getElementsByClassName('tips');
 const numberOfPersons = document.querySelector('#number');
 const tipAmount = document.querySelector('.amount h1');
 const totalPersons = document.querySelector('.total h1')
 let amount;
 
-bill.addEventListener("change", () => {
-    amount = bill.value;
-    console.log(amount);
+Array.from(tipPercentage).forEach(e => {
+    e.addEventListener("click", (e) => {
+        let target = e.target.textContent;
+        target = parseInt(target);
+        let tip = target * bill.value
+        console.log(tip);
+        console.log(typeof target);
+    })
 
-    if (typeof bill !== "number") {
-
-    }
-})
+});
