@@ -63,8 +63,9 @@ body {
     text-align: right;
     font-family: "Space Mono";
     font-weight: 700;
+    appearance: none;
     -webkit-appearance: none;
-    
+    margin: 0;
 }
 
 .input-tab input[type="number"]:focus,

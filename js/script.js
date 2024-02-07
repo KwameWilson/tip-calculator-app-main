@@ -8,10 +8,12 @@ let amount;
 Array.from(tipPercentage).forEach(e => {
     e.addEventListener("click", (e) => {
         let target = e.target.textContent;
-        target = parseInt(target);
-        let tip = target * bill;
-        console.log(typeof tip);
-        console.log(typeof target);
-    })
+        target = parseInt(target) / 100;
+        
+        let tip = target * bill.value;
+        tipAmount.textContent = tip;
 
+        amount = tip + parseInt(bill.value);
+        totalPersons.textContent = amount;
+    })
 });
