@@ -68,6 +68,20 @@ body {
     margin: 0;
 }
 
+.input-tab.success input {
+    border-color: #09c372;
+}
+
+.input-tab.error input {
+    border-color: #ff3860;
+}
+
+.input-tab .error {
+    color: #ff3860;
+    font-size: 9px;
+    height: 13px;
+}
+
 .input-tab input[type="number"]:focus,
 .people>input[type="number"]:focus {
     border: 3px solid #9FE8DF;

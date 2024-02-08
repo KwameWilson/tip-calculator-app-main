@@ -1,19 +1,42 @@
 const bill = document.querySelector('#bill');
 const tipPercentage = document.getElementsByClassName('tips');
 const numberOfPersons = document.querySelector('#number');
-const tipAmount = document.querySelector('.amount h1');
-const totalPersons = document.querySelector('.total h1')
+const tipAmountPerPerson = document.querySelector('.amount h1');
+const totalPerPersons = document.querySelector('.total h1')
 let amount;
+let messages =
 
-Array.from(tipPercentage).forEach(e => {
-    e.addEventListener("click", (e) => {
-        let target = e.target.textContent;
-        target = parseInt(target) / 100;
-        
-        let tip = target * bill.value;
-        tipAmount.textContent = tip;
+    Array.from(tipPercentage).forEach(e => {
+        e.addEventListener("click", (e) => {
 
-        amount = tip + parseInt(bill.value);
-        totalPersons.textContent = amount;
-    })
-});
+            const validateInputs = () => {
+                const billValue = bill.value;
+                const numberOfPersonsValue = numberOfPersons.value;
+
+                if (billValue === '' || numberOfPersonsValue === "") {
+                    console.log('Input fields cannot be left blank');
+                } else {
+
+                }
+            }
+
+            validateInputs()
+
+
+
+
+            let target = e.target.textContent;
+            target = parseInt(target) / 100;
+
+            let tip = target * bill.value;
+            amount = tip + parseInt(bill.value);
+
+            let tipPerPerson = tip / numberOfPersons.value;
+
+            tipAmountPerPerson.textContent = tipPerPerson;
+            totalPerPersons.textContent = amount;
+
+        })
+    });
+
+
