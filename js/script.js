@@ -22,8 +22,12 @@ let messages =
 
             validateInputs()
 
+            const setError = (element, message) => {
+                const inputTab = element.parentElement;
+                const errorDisplay = inputTab.querySelector('.error')
+            }
 
-
+            
 
             let target = e.target.textContent;
             target = parseInt(target) / 100;
