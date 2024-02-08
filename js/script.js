@@ -1,5 +1,6 @@
 const bill = document.querySelector('#bill');
 const tipPercentage = document.getElementsByClassName('tips');
+const customTipPercentage = document.querySelector('.tip-percentage #custom')
 const numberOfPersons = document.querySelector('#number');
 const tipAmountPerPerson = document.querySelector('.amount h1');
 const totalPerPersons = document.querySelector('.total h1')
@@ -15,7 +16,7 @@ let messages =
 
                 errorDisplay.innerText = message;
                 inputTab.classList.add('error');
-                inputTab.classList.remove('success')
+                inputTab.classList.remove('success');
             }
 
             // How did the .error classList end up on the errorDisplay Div
@@ -68,4 +69,9 @@ let messages =
         })
     });
 
-
+customTipPercentage.addEventListener('change', () => {
+    let customValue = customTipPercentage.value;
+    let tip = parseInt(customValue) / 100 * parseInt(bill.value);
+    let amount = tip + parseInt(customTipPercentage.value)
+    console.log(amount)
+})
