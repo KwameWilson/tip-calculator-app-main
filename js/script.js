@@ -9,12 +9,23 @@ let messages =
     Array.from(tipPercentage).forEach(e => {
         e.addEventListener("click", (e) => {
 
+            const setError = (element, message) => {
+                const inputTab = element.parentElement;
+                const errorDisplay = inputTab.querySelector('.error');
+
+                errorDisplay.innerText = message;
+                inputTab.classList.add('error');
+                inputTab.classList.remove('success')
+            }
+
+
             const validateInputs = () => {
                 const billValue = bill.value;
                 const numberOfPersonsValue = numberOfPersons.value;
 
-                if (billValue === '' || numberOfPersonsValue === "") {
+                if (billValue === '') {
                     console.log('Input fields cannot be left blank');
+                    setError(bill, "Input fields cannot be left blank")
                 } else {
 
                 }
@@ -22,12 +33,6 @@ let messages =
 
             validateInputs()
 
-            const setError = (element, message) => {
-                const inputTab = element.parentElement;
-                const errorDisplay = inputTab.querySelector('.error')
-            }
-
-            
 
             let target = e.target.textContent;
             target = parseInt(target) / 100;
