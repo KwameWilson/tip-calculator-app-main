@@ -18,6 +18,18 @@ let messages =
                 inputTab.classList.remove('success')
             }
 
+            // How did the .error classList end up on the errorDisplay Div
+
+
+
+            const setSuccess = element => {
+                const inputTab = element.parentElement;
+                const errorDisplay = inputTab.querySelector('.error');
+
+                errorDisplay.textContent = "";
+                errorDisplay.classList.add('success');
+                errorDisplay.classList.remove('error');
+            }
 
             const validateInputs = () => {
                 const billValue = bill.value;
@@ -27,8 +39,16 @@ let messages =
                     console.log('Input fields cannot be left blank');
                     setError(bill, "Input fields cannot be left blank")
                 } else {
-
+                    setSuccess(bill);
                 }
+
+                if (numberOfPersonsValue === '') {
+                    console.log('Input fields cannot be left blank');
+                    setError(numberOfPersons, "Input fields cannot be left blank")
+                } else {
+                    setSuccess(numberOfPersons);
+                }
+
             }
 
             validateInputs()
