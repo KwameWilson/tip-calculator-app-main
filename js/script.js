@@ -72,6 +72,9 @@ let messages =
 customTipPercentage.addEventListener('change', () => {
     let customValue = customTipPercentage.value;
     let tip = parseInt(customValue) / 100 * parseInt(bill.value);
-    let amount = tip + parseInt(customTipPercentage.value)
+    let amount = tip + parseInt(customValue)
+
+    tipAmountPerPerson.textContent = tip;
+    totalPerPersons.textContent = amount;
     console.log(amount)
 })
