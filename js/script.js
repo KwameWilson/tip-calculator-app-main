@@ -50,6 +50,11 @@ Array.from(tipPercentage).forEach(e => {
                 tipPerPerson = '$0.00';
                 amount = '$0.00';
             }
+
+            if (typeof numberOfPersonsValue === 'string' && (billValue === '' || billValue === undefined)) {
+                tipPerPerson = '$0.00';
+                amount = '$0.00';
+            }
         }
 
         validateInputs()
@@ -98,5 +103,3 @@ reset.addEventListener('click', () => {
     setSuccess(bill)
     setSuccess(numberOfPersons)
 })
-
-console.log(typeof tipAmountPerPerson);
