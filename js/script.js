@@ -1,9 +1,10 @@
 const bill = document.querySelector('#bill');
 const tipPercentage = document.getElementsByClassName('tips');
-const customTipPercentage = document.querySelector('.tip-percentage #custom')
+const customTipPercentage = document.querySelector('.tip-percentage #custom');
 const numberOfPersons = document.querySelector('#number');
 const tipAmountPerPerson = document.querySelector('.amount h1');
-const totalPerPersons = document.querySelector('.total h1')
+const totalPerPersons = document.querySelector('.total h1');
+const reset = document.querySelector('button.btn');
 let amount;
 let messages =
 
@@ -38,14 +39,19 @@ let messages =
 
                 if (billValue === '') {
                     console.log('Input fields cannot be left blank');
-                    setError(bill, "Input fields cannot be left blank")
+                    setError(bill, "Input fields cannot be left blank");
+                    tipAmountPerPerson.textContent = '$0.00'
+                    totalPerPersons.textContent = '$0.00'
+
                 } else {
                     setSuccess(bill);
                 }
 
                 if (numberOfPersonsValue === '') {
                     console.log('Input fields cannot be left blank');
-                    setError(numberOfPersons, "Input fields cannot be left blank")
+                    setError(numberOfPersons, "Input fields cannot be left blank");
+                    tipAmountPerPerson.textContent = '$0.00'
+                    totalPerPersons.textContent = '$0.00'
                 } else {
                     setSuccess(numberOfPersons);
                 }
@@ -77,4 +83,11 @@ customTipPercentage.addEventListener('change', () => {
     tipAmountPerPerson.textContent = tip;
     totalPerPersons.textContent = amount;
     console.log(amount)
+})
+
+reset.addEventListener('click', () => {
+    bill.value = ''
+    numberOfPersons.value = ''
+    tipAmountPerPerson.textContent = '$0.00'
+    totalPerPersons.textContent = '$0.00'
 })
