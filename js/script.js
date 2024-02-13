@@ -10,6 +10,18 @@ let amount;
 Array.from(tipPercentage).forEach(e => {
     e.addEventListener("click", (e) => {
 
+        let target = e.target.textContent;
+        target = parseInt(target) / 100;
+
+        let tip = target * bill.value;
+        amount = tip + parseInt(bill.value);
+
+        let tipPerPerson = tip / numberOfPersons.value;
+
+        tipAmountPerPerson.textContent = tipPerPerson.toFixed(2);
+        totalPerPersons.textContent = amount.toFixed(2);
+
+
         const setError = (element, message) => {
             const inputTab = element.parentElement;
             const errorDisplay = inputTab.querySelector('.error');
@@ -46,21 +58,13 @@ Array.from(tipPercentage).forEach(e => {
                 setSuccess(numberOfPersons);
             }
 
+            if (typeof billValue === 'string' && (numberOfPersonsValue === '' || numberOfPersonsValue === undefined)) {
+                tipPerPerson = '$0.00';
+                amount = '$0.00';
+            }
         }
 
         validateInputs()
-
-
-        let target = e.target.textContent;
-        target = parseInt(target) / 100;
-
-        let tip = target * bill.value;
-        amount = tip + parseInt(bill.value);
-
-        let tipPerPerson = tip / numberOfPersons.value;
-
-        tipAmountPerPerson.textContent = tipPerPerson.toFixed(2);
-        totalPerPersons.textContent = amount.toFixed(2);
 
     })
 });
@@ -94,3 +98,5 @@ reset.addEventListener('click', () => {
     setSuccess(bill)
     setSuccess(numberOfPersons)
 })
+
+console.log(typeof tipAmountPerPerson);
