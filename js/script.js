@@ -40,9 +40,6 @@ let messages =
                 if (billValue === '') {
                     console.log('Input fields cannot be left blank');
                     setError(bill, "Input fields cannot be left blank");
-                    tipAmountPerPerson.textContent = '$0.00'
-                    totalPerPersons.textContent = '$0.00'
-
                 } else {
                     setSuccess(bill);
                 }
@@ -50,8 +47,6 @@ let messages =
                 if (numberOfPersonsValue === '') {
                     console.log('Input fields cannot be left blank');
                     setError(numberOfPersons, "Input fields cannot be left blank");
-                    tipAmountPerPerson.textContent = '$0.00'
-                    totalPerPersons.textContent = '$0.00'
                 } else {
                     setSuccess(numberOfPersons);
                 }
@@ -69,8 +64,8 @@ let messages =
 
             let tipPerPerson = tip / numberOfPersons.value;
 
-            tipAmountPerPerson.textContent = tipPerPerson;
-            totalPerPersons.textContent = amount;
+            tipAmountPerPerson.textContent = tipPerPerson.toFixed(2);
+            totalPerPersons.textContent = amount.toFixed(2);
 
         })
     });
@@ -80,8 +75,8 @@ customTipPercentage.addEventListener('change', () => {
     let tip = parseInt(customValue) / 100 * parseInt(bill.value);
     let amount = tip + parseInt(customValue)
 
-    tipAmountPerPerson.textContent = tip;
-    totalPerPersons.textContent = amount;
+    tipAmountPerPerson.textContent = tip.toFixed(2);
+    totalPerPersons.textContent = amount.toFixed(2);
     console.log(amount)
 })
 
