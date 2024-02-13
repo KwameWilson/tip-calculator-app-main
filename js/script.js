@@ -83,6 +83,19 @@ customTipPercentage.addEventListener('change', () => {
 reset.addEventListener('click', () => {
     bill.value = ''
     numberOfPersons.value = ''
-    tipAmountPerPerson.textContent = '$0.00'
-    totalPerPersons.textContent = '$0.00'
+    tipAmountPerPerson.textContent = '$0.00';
+    totalPerPersons.textContent = '$0.00';
+
+    const setSuccess = element => {
+        const inputTab = element.parentElement;
+        const errorDisplay = inputTab.querySelector('.error');
+
+        errorDisplay.textContent = "";
+        errorDisplay.classList.add('success');
+        errorDisplay.classList.remove('error');
+        inputTab.classList.remove('error')
+    }
+
+    setSuccess(bill)
+    setSuccess(numberOfPersons)
 })
